@@ -1,0 +1,22 @@
+<div class="container"> 
+ <nav class="navbar navbar-light bg-light">
+ <div class="container-fluid"> 
+ <a href=""
+ class="navbar-brand me-auto">Главная</a>
+ <a href=""
+ class="nav-item nav-link">Регистрация</a>
+ <a href=""
+ class="nav-item nav-link">Вход</a>
+ <a href=""
+ class="nav-item nav-link">Мои объявления</a>
+ <form action="" method="POST"
+ class="form-inline">
+ <?php echo csrf_field(); ?>
+ <input type="submit" class="btn btn-danger" 
+ value="Выход">
+ </form> 
+ </div>
+ </nav>
+ <h1 class="my-3 text-center">Управление проектами и здачами</h1> 
+ <?php echo $__env->yieldContent('content'); ?> 
+</div> <?php /**PATH D:\OSPanel\domains\mironova\Project_management\Project_management_back\resources\views/layouts/header.blade.php ENDPATH**/ ?>
