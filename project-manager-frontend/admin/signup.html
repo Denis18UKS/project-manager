@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Авторизация</title>
+    <title>Регистрация</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/sign.css">
 </head>
@@ -12,7 +12,11 @@
 <div class="container">
     <section class="sign-in">
         <form class="form" action="" method="post">
-            <h1 class="title">Авторизация</h1>
+            <h1 class="title">Регистрация</h1>
+            <div class="form__item">
+                <label for="email">Почта</label>
+                <input name="email" type="text" id="email" placeholder="Введите почту">
+            </div>
             <div class="form__item">
                 <label for="login">Логин</label>
                 <input name="login" type="text" id="login" placeholder="Введите логин">
@@ -20,11 +24,15 @@
             <div class="form__item">
                 <label for="password">Пароль</label>
                 <input name="password" type="password" id="password" placeholder="Введите пароль">
-                <a id="forgot-password" href="#">Забыли пароль?</a>
             </div>
-            <button type="submit" class="form__btn">Авторизоваться</button>
+            <div class="form__item">
+                <label for="password_repeat">Подтверждение пароля</label>
+                <input name="password_confirmation" type="password" id="password_repeat" placeholder="Подтвердите пароль">
+            </div>
+            <button type="submit" class="form__btn">Зарегистрироваться</button>
+            <p class="form_p">Уже есть аккаунт? <a href="index.html">Войти</a></p>
         </form>
-        <div class="background__img sign-in">
+        <div class="background__img sign-up">
             <div class="blur">
                 <div class="blur__stars">
                     <img src="images/star.png" alt="">
@@ -33,7 +41,7 @@
                     <img src="images/star.png" alt="">
                     <img src="images/star.png" alt="">
                 </div>
-                <p class="blur__text">Инструмент для управления панелью управления значительно упростил наше управление задачами. Назначение, отслеживание и выполнение задач никогда не было так легко!</p>
+                <p class="blur__text">Инструмент управления панелью управления упростил отслеживание задач и значительно повысил производительность команды.</p>
                 <div class="blur__author">Кэтрин Мёрфи</div>
                 <div class="blur__position">Координатор по маркетингу</div> 
             </div>
