@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Отчеты</title>
+    <title>Главная</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/user.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
@@ -13,7 +13,7 @@
 
 <body>
     <nav class="nav">
-        <a href="../admin/admin.html" class="nav__logo">
+        <a href="admin.html" class="nav__logo">
             <img class="nav__logo-img" src="../images/logo.png" alt="logo">
             <p class="nav__logo-text">Название</p>
         </a>
@@ -21,7 +21,7 @@
             <p class="nav__menu-text">Меню</p>
             <ul class="nav__menu-list">
                 <li class="nav__menu-item">
-                    <a class="nav__menu-item-link" href="../admin/admin.html?active=page1">
+                    <a class="nav__menu-item-link" href="admin.html?active=page1">
                         <svg class="nav__menu-item-icon" width="20" height="21" viewBox="0 0 20 21" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -33,7 +33,7 @@
                 </li>
 
                 <li class="nav__menu-item">
-                    <a class="nav__menu-item-link" href="../admin/rukovoditeli.html?active=page2">
+                    <a class="nav__menu-item-link" href="rukovoditeli.html?active=page2">
                         <svg class="nav__menu-item-icon" width="20" height="21" viewBox="0 0 20 21" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -45,7 +45,7 @@
                 </li>
 
                 <li class="nav__menu-item">
-                    <a class="nav__menu-item-link" href="../admin/ispolniteli.html?active=page2">
+                    <a class="nav__menu-item-link" href="ispolniteli.html?active=page2">
                         <svg class="nav__menu-item-icon" width="20" height="21" viewBox="0 0 20 21" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -57,7 +57,7 @@
                 </li>
 
                 <li class="nav__menu-item">
-                    <a class="nav__menu-item-link" href="../admin/tasks.html?active=page3">
+                    <a class="nav__menu-item-link" href="tasks.html?active=page3">
                         <svg class="nav__menu-item-icon" width="20" height="21" viewBox="0 0 20 21" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -68,7 +68,7 @@
                     </a>
                 </li>
 
-                <li class="nav__menu-item--active">
+                <li class="nav__menu-item">
                     <a class="nav__menu-item-link" href="../manager/reptorts.html">
                         <svg class="nav__menu-item-icon" width="20" height="21" viewBox="0 0 20 21" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -83,8 +83,8 @@
             <div class="nav__menu-account">
                 <p class="nav__menu-text">Аккаунт</p>
                 <ul class="nav__menu-account-list">
-                    <li class="nav__menu-item">
-                        <a class="nav__menu-item-link" href="../admin/account.html">
+                    <li class="nav__menu-item--active">
+                        <a class="nav__menu-item-link" href="account.html">
                             <svg class="nav__menu-item-stroke" width="20" height="21" viewBox="0 0 20 21" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -105,7 +105,7 @@
     <div class="container">
         <div class="filter">
             <form class="filter__search" action="" method="get">
-                <input name="search" class="filter__search-input" type="text" value="" placeholder="Найти Отчет">
+                <input name="search" class="filter__search-input" type="text" value="" placeholder="Найти задачу">
                 <button class="filter__search-button">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -119,19 +119,57 @@
                 <img class="notifications-top" src="../images/notofication-top.svg" alt="">
                 <img class="notifications-bottom" src="../images/notification-bottom.svg" alt="">
             </div>
+            <!-- <div class="notifications--active">
+                <img class="notifications-top" src="../images/notofication-top.svg" alt="">
+                <img class="notifications-bottom" src="../images/notification-bottom.svg" alt="">
+            </div> // Если есть уведомления -->
+            <a class="filter__user-icon" href="account.html">
+                <img class="filter__user-icon-img" src="../images/account-icon.png" alt="">
+            </a>
         </div>
     </div>
 
     <div class="container">
-        <section class="reports">
-            <h2 class="title">Мои Отчеты</h2>
-            <div class="reports__cards">
-                <div class="reports__card">
-                    <div class="projects__card-title">Отчёт № 1</div>
-                    <div class="projects__card-manager">Проект :</div>
-                    <div class="projects__card-manager">Задача :</div>
-                    <div class="projects__card-time">Осталось: <span class="tasks__card-time-value">10</span>д</div>
-                    <div class="projects__card-status">Статус</div>
+        <section class="account">
+            <h2 class="title-account">Аккаунт</h2>
+
+            <div class="account__items">
+                <img class="account__item-bg" src="../images/account-bg.jpg" alt="account-bg">
+
+                <div class="account__card">
+                    <div class="account__card-icon">
+                        <img class="account__card-icon-img" src="../images/account-icon.png" alt="">
+                        <div class="account__card-icon-edit">
+                            <img src="../images/account-icon-eit.png" alt="">
+                        </div>
+                    </div>
+                    <div class="account__card-user-name">Логин</div>
+                    <div class="account__card-user-email">почта@example.com</div>
+                </div>
+                <div class="account__settings">
+                    <h2 class="title">Настройки аккаунта</h2>
+                    <form class="account__form" action="">
+                        <div class="account__form-item">
+                            <label for="account-login" class="account-form-item-title">Логин</label>
+                            <input type="text" class="account-form-item-input" id="account-login" value="Login"
+                                readonly>
+                        </div>
+                        <div class="account__form-item">
+                            <label for="account-login" class="account-form-item-title">Почта</label>
+                            <input type="text" class="account-form-item-input" id="account-login"
+                                value="email1@example.com" readonly>
+                        </div>
+                        <div class="account__form-item">
+                            <label for="account-login" class="account-form-item-title">Идентификатор сотрудника</label>
+                            <input type="text" class="account-form-item-input" id="account-login" value="09-6364"
+                                readonly>
+                        </div>
+                        <div class="account__form-item">
+                            <label for="account-login" class="account-form-item-title">Роль</label>
+                            <input type="text" class="account-form-item-input" id="account-login" value="Администратор"
+                                readonly>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>

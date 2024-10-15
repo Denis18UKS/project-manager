@@ -1,3 +1,8 @@
+/* For All Buttons */
+button {
+    cursor: pointer;
+    transition: all 0.6s ease-in-out;
+}
 /* Nav */
 .nav {
     position: fixed;
@@ -6,6 +11,7 @@
     width: 220px;
     height: auto;
 }
+
 .nav__logo {
     background-color: #fff;
     width: 100%;
@@ -62,7 +68,7 @@
 .nav__menu-item:hover,
 .nav__menu-item--active {
     transition: background-color 0.2s linear;
-    background-color: #262626;   
+    background-color: #262626;
 }
 .nav__menu-item:hover .nav__menu-item-link,
 .nav__menu-item--active .nav__menu-item-link {
@@ -90,7 +96,6 @@
     column-gap: 8px;
 }
 
-
 /* Filter */
 .filter {
     margin: 50px 8px 0 32px;
@@ -113,7 +118,7 @@
     height: 56px;
     width: 100%;
     border-radius: 8px;
-    border: 1px solid #EEEEEE;
+    border: 1px solid #eeeeee;
     padding: 0 16px 0 48px;
     outline: none;
 }
@@ -172,7 +177,7 @@
     min-width: 56px;
     height: 56px;
     position: relative;
-    border: 1px solid #EEEEEE;
+    border: 1px solid #eeeeee;
     border-radius: 8px;
 }
 .notifications-top {
@@ -185,10 +190,10 @@
     position: absolute;
     top: 35px;
     left: 50%;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
 }
 .notifications--active::after {
-    content: '';
+    content: "";
     display: block;
     width: 7px;
     height: 7px;
@@ -199,7 +204,6 @@
     top: 16px;
 }
 
-
 /* Tasks && Projects && Reports */
 .tasks,
 .projects,
@@ -207,7 +211,7 @@
 .task,
 .project,
 .report {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border-radius: 8px;
     padding: 16px;
     margin: 0 8px 32px 32px;
@@ -227,7 +231,7 @@
     border-radius: 8px;
     color: #262626;
     box-shadow: 0px 1px 1.3px 0px #00000012;
-    border: 1px solid #EEEEEE;
+    border: 1px solid #eeeeee;
     box-shadow: 0 4px 8px rgba(68, 68, 68, 0.3);
     background-color: #fff;
     cursor: pointer;
@@ -245,13 +249,13 @@
     margin-bottom: 15px;
 }
 .tasks__card-priority.low {
-    background-color: #7FAF45;
+    background-color: #7faf45;
 }
 .tasks__card-priority.medium {
-    background-color: #FFCC00;;
+    background-color: #ffcc00;
 }
 .tasks__card-priority.high {
-    background-color: #FA4D35;
+    background-color: #fa4d35;
 }
 .tasks__card-background {
     position: absolute;
@@ -259,28 +263,28 @@
     top: 0;
 }
 .tasks__card.low {
-    background-color: #F3F8ED;
+    background-color: #f3f8ed;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .tasks__card.medium {
-    background-color: #FFF5B0;
+    background-color: #fff5b0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .tasks__card.high {
-    background-color: #FFDCCD;
+    background-color: #ffdccd;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 .tasks__card-background.high path {
-    stroke: #FFE2D6;
+    stroke: #ffe2d6;
 }
 .tasks__card-background.low path {
-    stroke: #E8F4D8;
+    stroke: #e8f4d8;
 }
 .tasks__card-background.medium path {
-    stroke: #FFE2A0;
+    stroke: #ffe2a0;
 }
 .tasks__card-project,
-.projects__card-title  {
+.projects__card-title {
     font-size: 24px;
     font-weight: 700;
     line-height: 38px;
@@ -340,7 +344,7 @@ h2.title-account {
     border-radius: 8px;
     padding: 16px 0;
     display: flex;
-    align-items: center;    
+    align-items: center;
     flex-direction: column;
 }
 .account__card-icon {
@@ -360,7 +364,7 @@ h2.title-account {
     height: 28px;
     width: 28px;
     background-color: #212121;
-    border: 1px solid #FFFFFF;
+    border: 1px solid #ffffff;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -411,7 +415,7 @@ h2.title-account {
     width: 100%;
     padding: 0 16px;
     border-radius: 15px;
-    border: 1px solid #EEEEEE;
+    border: 1px solid #eeeeee;
     font-size: 16px;
     font-weight: 400;
     line-height: 23px;
@@ -450,7 +454,7 @@ h2.title-account {
     border-radius: 8px;
     color: #262626;
     box-shadow: 0px 1px 1.3px 0px #00000012;
-    border: 1px solid #EEEEEE;
+    border: 1px solid #eeeeee;
     box-shadow: 0 4px 8px rgba(68, 68, 68, 0.3);
     background-color: #fff;
 }
@@ -467,3 +471,45 @@ h2.title-account {
 }
 
 /* Task */
+
+/* Кнопка для добавления исполнителей */
+.add_user_btn {
+    margin-left: 3.5%;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    font-size: large;
+    font-weight: 800;
+    transition: all 0.6s ease-in-out;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0);
+    color: black;
+}
+
+#btns {
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.edit_btn,
+.delete_btn {
+    width: 80%;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+}
+
+.edit_btn {
+    background-color: forestgreen;
+    color: white;
+}
+
+.delete_btn {
+    background-color: red;
+    color: white;
+}

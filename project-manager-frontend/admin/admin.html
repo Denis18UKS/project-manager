@@ -4,24 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Отчеты</title>
+    <title>Главная</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/user.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
-    <script src="../scripts/user.js" defer></script>
+    <script src="../scripts/admin.js" defer></script>
 </head>
 
 <body>
     <nav class="nav">
-        <a href="../admin/admin.html" class="nav__logo">
+        <a href="admin.html" class="nav__logo">
             <img class="nav__logo-img" src="../images/logo.png" alt="logo">
             <p class="nav__logo-text">Название</p>
         </a>
         <div class="nav__menu">
             <p class="nav__menu-text">Меню</p>
             <ul class="nav__menu-list">
-                <li class="nav__menu-item">
-                    <a class="nav__menu-item-link" href="../admin/admin.html?active=page1">
+                <li class="nav__menu-item--active">
+                    <a class="nav__menu-item-link" href="admin.html?active=page1">
                         <svg class="nav__menu-item-icon" width="20" height="21" viewBox="0 0 20 21" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -33,7 +33,7 @@
                 </li>
 
                 <li class="nav__menu-item">
-                    <a class="nav__menu-item-link" href="../admin/rukovoditeli.html?active=page2">
+                    <a class="nav__menu-item-link" href="rukovoditeli.html?active=page2">
                         <svg class="nav__menu-item-icon" width="20" height="21" viewBox="0 0 20 21" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -45,7 +45,7 @@
                 </li>
 
                 <li class="nav__menu-item">
-                    <a class="nav__menu-item-link" href="../admin/ispolniteli.html?active=page2">
+                    <a class="nav__menu-item-link" href="ispolniteli.html?active=page2">
                         <svg class="nav__menu-item-icon" width="20" height="21" viewBox="0 0 20 21" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -57,7 +57,7 @@
                 </li>
 
                 <li class="nav__menu-item">
-                    <a class="nav__menu-item-link" href="../admin/tasks.html?active=page3">
+                    <a class="nav__menu-item-link" href="tasks.html?active=page3">
                         <svg class="nav__menu-item-icon" width="20" height="21" viewBox="0 0 20 21" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -68,7 +68,7 @@
                     </a>
                 </li>
 
-                <li class="nav__menu-item--active">
+                <li class="nav__menu-item">
                     <a class="nav__menu-item-link" href="../manager/reptorts.html">
                         <svg class="nav__menu-item-icon" width="20" height="21" viewBox="0 0 20 21" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -84,7 +84,7 @@
                 <p class="nav__menu-text">Аккаунт</p>
                 <ul class="nav__menu-account-list">
                     <li class="nav__menu-item">
-                        <a class="nav__menu-item-link" href="../admin/account.html">
+                        <a class="nav__menu-item-link" href="account.html">
                             <svg class="nav__menu-item-stroke" width="20" height="21" viewBox="0 0 20 21" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -105,7 +105,7 @@
     <div class="container">
         <div class="filter">
             <form class="filter__search" action="" method="get">
-                <input name="search" class="filter__search-input" type="text" value="" placeholder="Найти Отчет">
+                <input name="search" class="filter__search-input" type="text" value="" placeholder="Найти задачу">
                 <button class="filter__search-button">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -114,22 +114,125 @@
                     </svg>
                 </button>
             </form>
+            <button class="filter__priority">Приоритетные</button>
             <button class="filter__reset">Сбросить</button>
             <div class="notifications">
                 <img class="notifications-top" src="../images/notofication-top.svg" alt="">
                 <img class="notifications-bottom" src="../images/notification-bottom.svg" alt="">
             </div>
+            <!-- <div class="notifications--active">
+                <img class="notifications-top" src="../images/notofication-top.svg" alt="">
+                <img class="notifications-bottom" src="../images/notification-bottom.svg" alt="">
+            </div> // Если есть уведомления -->
+            <a class="filter__user-icon" href="account.html">
+                <img class="filter__user-icon-img" src="../images/account-icon.png" alt="">
+            </a>
         </div>
     </div>
 
     <div class="container">
-        <section class="reports">
-            <h2 class="title">Мои Отчеты</h2>
-            <div class="reports__cards">
-                <div class="reports__card">
-                    <div class="projects__card-title">Отчёт № 1</div>
-                    <div class="projects__card-manager">Проект :</div>
-                    <div class="projects__card-manager">Задача :</div>
+        <button class="add_user_btn" onclick="window.location.href=''">Назначить руководителя</button>
+        <button class="add_user_btn" onclick="window.location.href=''">Переназначить руководителя</button>
+        <section class="tasks">
+            <h2 class="title">Проекты</h2>
+            <div class="tasks__cards">
+                <div class="tasks__card low"> <!-- Низкий приоритет -->
+                    <div class="tasks__card-priority low">
+                        <img src="../images/prioryty-icon.png" alt="">
+                    </div>
+                    <div class="tasks__card-project">Проект</div>
+                    <div class="tasks__card-title">Название</div>
+                    <div class="tasks__card-time">Осталось: <span class="tasks__card-time-value">2</span>д</div>
+                    <div class="tasks__card-status">Статус: <span class="tasks__card-status-value">Назначена</span>
+                    </div>
+                    <svg class="tasks__card-background low" width="63" height="62" viewBox="0 0 63 62" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40.2787 -19V61.4485" stroke="#E8F4D8" stroke-width="5.07" stroke-miterlimit="10" />
+                        <path d="M80.5607 21.2258H0" stroke="#E8F4D8" stroke-width="5.07" stroke-miterlimit="10" />
+                        <path d="M80.5607 21.2258H0" stroke="#E8F4D8" stroke-width="5.07" stroke-miterlimit="10" />
+                        <path d="M68.7626 49.6668L11.7981 -7.21838" stroke="#E8F4D8" stroke-width="5.07"
+                            stroke-miterlimit="10" />
+                        <path d="M11.7981 49.6668L68.7626 -7.21838" stroke="#E8F4D8" stroke-width="5.07"
+                            stroke-miterlimit="10" />
+                        <path d="M23.3807 -15.288L57.18 57.7364" stroke="#E8F4D8" stroke-width="5.07"
+                            stroke-miterlimit="10" />
+                        <path d="M54.1831 -16.5275L26.3777 58.9759" stroke="#E8F4D8" stroke-width="5.07"
+                            stroke-miterlimit="10" />
+                        <path d="M76.8435 4.34814L3.71725 38.1003" stroke="#E8F4D8" stroke-width="5.07"
+                            stroke-miterlimit="10" />
+                        <path d="M78.0847 35.1076L2.47601 7.34094" stroke="#E8F4D8" stroke-width="5.07"
+                            stroke-miterlimit="10" />
+                    </svg>
+                </div>
+
+                <div class="tasks__card medium"> <!-- Средний приоритет -->
+                    <div class="tasks__card-priority medium">
+                        <img src="../images/prioryty-icon.png" alt="">
+                    </div>
+                    <div class="tasks__card-project">Проект</div>
+                    <div class="tasks__card-title">Название</div>
+                    <div class="tasks__card-time">Осталось: <span class="tasks__card-time-value">2</span>д</div>
+                    <div class="tasks__card-status">Статус: <span class="tasks__card-status-value">Назначена</span>
+                    </div>
+                    <svg class="tasks__card-background medium" width="63" height="62" viewBox="0 0 63 62" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40.2787 -19V61.4485" stroke="#E8F4D8" stroke-width="5.07" stroke-miterlimit="10" />
+                        <path d="M80.5607 21.2258H0" stroke="#E8F4D8" stroke-width="5.07" stroke-miterlimit="10" />
+                        <path d="M80.5607 21.2258H0" stroke="#E8F4D8" stroke-width="5.07" stroke-miterlimit="10" />
+                        <path d="M68.7626 49.6668L11.7981 -7.21838" stroke="#E8F4D8" stroke-width="5.07"
+                            stroke-miterlimit="10" />
+                        <path d="M11.7981 49.6668L68.7626 -7.21838" stroke="#E8F4D8" stroke-width="5.07"
+                            stroke-miterlimit="10" />
+                        <path d="M23.3807 -15.288L57.18 57.7364" stroke="#E8F4D8" stroke-width="5.07"
+                            stroke-miterlimit="10" />
+                        <path d="M54.1831 -16.5275L26.3777 58.9759" stroke="#E8F4D8" stroke-width="5.07"
+                            stroke-miterlimit="10" />
+                        <path d="M76.8435 4.34814L3.71725 38.1003" stroke="#E8F4D8" stroke-width="5.07"
+                            stroke-miterlimit="10" />
+                        <path d="M78.0847 35.1076L2.47601 7.34094" stroke="#E8F4D8" stroke-width="5.07"
+                            stroke-miterlimit="10" />
+                    </svg>
+                </div>
+
+                <div class="tasks__card high">
+                    <div class="tasks__card-priority high"> <!-- Высокий приоритет -->
+                        <img src="../images/prioryty-icon.png" alt="">
+                    </div>
+                    <div class="tasks__card-project">Проект</div>
+                    <div class="tasks__card-title">Название</div>
+                    <div class="tasks__card-time">Осталось: <span class="tasks__card-time-value">2</span>д</div>
+                    <div class="tasks__card-status">Статус: <span class="tasks__card-status-value">Назначена</span>
+                    </div>
+                    <svg class="tasks__card-background high" width="63" height="62" viewBox="0 0 63 62" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40.2787 -19V61.4485" stroke="#E8F4D8" stroke-width="5.07" stroke-miterlimit="10" />
+                        <path d="M80.5607 21.2258H0" stroke="#E8F4D8" stroke-width="5.07" stroke-miterlimit="10" />
+                        <path d="M80.5607 21.2258H0" stroke="#E8F4D8" stroke-width="5.07" stroke-miterlimit="10" />
+                        <path d="M68.7626 49.6668L11.7981 -7.21838" stroke="#E8F4D8" stroke-width="5.07"
+                            stroke-miterlimit="10" />
+                        <path d="M11.7981 49.6668L68.7626 -7.21838" stroke="#E8F4D8" stroke-width="5.07"
+                            stroke-miterlimit="10" />
+                        <path d="M23.3807 -15.288L57.18 57.7364" stroke="#E8F4D8" stroke-width="5.07"
+                            stroke-miterlimit="10" />
+                        <path d="M54.1831 -16.5275L26.3777 58.9759" stroke="#E8F4D8" stroke-width="5.07"
+                            stroke-miterlimit="10" />
+                        <path d="M76.8435 4.34814L3.71725 38.1003" stroke="#E8F4D8" stroke-width="5.07"
+                            stroke-miterlimit="10" />
+                        <path d="M78.0847 35.1076L2.47601 7.34094" stroke="#E8F4D8" stroke-width="5.07"
+                            stroke-miterlimit="10" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="container">
+        <section class="projects">
+            <h2 class="title">Руководители</h2>
+            <div class="projects__cards">
+                <div class="projects__card">
+                    <div class="projects__card-title">Название</div>
+                    <div class="projects__card-manager">Имя</div>
                     <div class="projects__card-time">Осталось: <span class="tasks__card-time-value">10</span>д</div>
                     <div class="projects__card-status">Статус</div>
                 </div>
